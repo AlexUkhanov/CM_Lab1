@@ -8,7 +8,7 @@ namespace CM_Lab1
 {
     class PointsSequence
     {
-        private Func<int, double> _func;
+        private Func<int,double> _func;
         //Left and right borders of segment
         private double left, right;
         //Points x
@@ -23,8 +23,12 @@ namespace CM_Lab1
         //left_in,right_in - borders of distribution
         //n_in - count of segments
         //type_in - type of distribution
-        public PointsSequence(double left_in, double right_in, int type_in, int n_in)
+        public PointsSequence(double left_in, double right_in, bool type_in, int n_in)
         {
+            type = type_in;
+            n = n_in;
+            left = left_in;
+            right = right_in;
             x_points = new double[n+1];
             if (type)
             {

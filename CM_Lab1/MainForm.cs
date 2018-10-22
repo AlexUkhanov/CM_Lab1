@@ -17,6 +17,7 @@ namespace CM_Lab1
         {
             InitializeComponent();
             points = new PointsSequence(1, 3, false, 5);
+            SplitDifferenceTable sdt = new SplitDifferenceTable(points, new Function(x => 1.0 / (5 + 9 * x * x)));
         }
     }
 }

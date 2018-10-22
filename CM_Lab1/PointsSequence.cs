@@ -19,6 +19,8 @@ namespace CM_Lab1
         bool type;
         //Count of segments
         int n;
+        //Count of points
+        int count;
         //Constructor
         //left_in,right_in - borders of distribution
         //n_in - count of segments
@@ -27,6 +29,7 @@ namespace CM_Lab1
         {
             type = type_in;
             n = n_in;
+            count = n + 1;
             left = left_in;
             right = right_in;
             x_points = new double[n+1];
@@ -56,6 +59,10 @@ namespace CM_Lab1
         public double this[int i]
         {
             get { return x_points[i]; }
+        }
+        public int cnt
+        {
+            get { return count; }
         }
     }
 }

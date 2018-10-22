@@ -34,11 +34,11 @@
             this.nudRight = new System.Windows.Forms.NumericUpDown();
             this.lblLeft = new System.Windows.Forms.Label();
             this.lblRight = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nudPower = new System.Windows.Forms.NumericUpDown();
             this.lblPow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPower)).BeginInit();
             this.SuspendLayout();
             // 
             // rbChebyshev
@@ -95,12 +95,12 @@
             this.lblRight.TabIndex = 5;
             this.lblRight.Text = "Right border";
             // 
-            // numericUpDown2
+            // nudPower
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(305, 384);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 7;
+            this.nudPower.Location = new System.Drawing.Point(305, 384);
+            this.nudPower.Name = "nudPower";
+            this.nudPower.Size = new System.Drawing.Size(120, 20);
+            this.nudPower.TabIndex = 7;
             // 
             // lblPow
             // 
@@ -117,7 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblPow);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.nudPower);
             this.Controls.Add(this.lblRight);
             this.Controls.Add(this.lblLeft);
             this.Controls.Add(this.nudRight);
@@ -128,7 +128,7 @@
             this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPower)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +142,7 @@
         private System.Windows.Forms.NumericUpDown nudRight;
         private System.Windows.Forms.Label lblLeft;
         private System.Windows.Forms.Label lblRight;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nudPower;
         private System.Windows.Forms.Label lblPow;
     }
 }

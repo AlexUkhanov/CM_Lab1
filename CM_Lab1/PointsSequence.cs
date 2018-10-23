@@ -46,6 +46,11 @@ namespace CM_Lab1
                 x_points[i] = _func(i);
             }
         }
+        public PointsSequence(double[] double_arr)
+        {
+            x_points = double_arr;
+            count = double_arr.Length;
+        }
         //i-number of point
         private double ChebyshevDistribution(int i)
         {

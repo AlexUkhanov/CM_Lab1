@@ -12,12 +12,14 @@ namespace CM_Lab1
 {
     public partial class MainForm : Form
     {
-        PointsSequence points;
         public MainForm()
         {
             InitializeComponent();
-            points = new PointsSequence(1, 3, false, 5);
-            SplitDifferenceTable sdt = new SplitDifferenceTable(points, new Function(x => 1.0 / (5 + 9 * x * x)));
+            //double[] arr = { -2, 0, 2 };
+            //PointsSequence points=new PointsSequence(arr);
+            PointsSequence points = new PointsSequence(-1, 1, false, 15);
+            InterpolationNewtonPolynom polynom=new InterpolationNewtonPolynom(points, new Function(x => 1.0 / (5 + 9 * x * x)));
+            double val = polynom.Calculate(0.5);
         }
     }
 }

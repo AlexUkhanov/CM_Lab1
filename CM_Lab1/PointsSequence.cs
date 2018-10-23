@@ -54,7 +54,7 @@ namespace CM_Lab1
         //i-number of point
         private double ChebyshevDistribution(int i)
         {
-            return (left + right) / 2 + (right - left) / 2 * Math.Cos((2 * i + 1) / (2 * n + 2) * Math.PI);
+            return (left + right) / 2 + (right - left) / 2 * Math.Cos((double)(2 * i + 1) / (2 * n + 2) * Math.PI);
         }
         private double EvenDistribution(int i)
         {

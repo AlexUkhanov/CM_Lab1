@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CM_Lab1
 {
-    //Класс для чистой функии
-    public class Function
+    //Function's class
+    public class Function:IFunction
     {
-        //Делегат функции
+        //Function's delegate
         private Func<double, double> _func;
 
-        //Конструктор
+        //Constructor
         public Function(Func<double, double> func)
         {
             this._func = func;
         }
 
-        //Вычисляет значение функции по аргументу
+        //Calc
         public double Caclulate(double arg) => _func(arg);
     }
 }

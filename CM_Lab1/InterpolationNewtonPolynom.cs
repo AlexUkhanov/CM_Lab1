@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CM_Lab1
 {
-    class InterpolationNewtonPolynom
+    class InterpolationNewtonPolynom:IFunction
     {
         //Divided difference table instance
         private DividedDifferenceTable divTable;
@@ -22,12 +22,12 @@ namespace CM_Lab1
             divTable = new DividedDifferenceTable(ps, func);
         }
         //Calculate
-        public double Calculate(double arg)
+        public double Caclulate(double arg)
         {
             double res = 0;
             for (int j = 0; j < this.divTable.len; j++)
             {
-                double addend = (double)this.divTable[0,j];
+                double addend = (double)this.divTable[0, j];
                 for (int i = 0; i < j; i++)
                 {
                     addend *= (arg - ps[i]);

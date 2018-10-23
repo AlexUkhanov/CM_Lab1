@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.rbChebyshev = new System.Windows.Forms.RadioButton();
             this.rbEven = new System.Windows.Forms.RadioButton();
-            this.nudLeft = new System.Windows.Forms.NumericUpDown();
-            this.nudRight = new System.Windows.Forms.NumericUpDown();
             this.lblLeft = new System.Windows.Forms.Label();
             this.lblRight = new System.Windows.Forms.Label();
             this.nudPower = new System.Windows.Forms.NumericUpDown();
             this.lblPow = new System.Windows.Forms.Label();
+            this.btRun = new System.Windows.Forms.Button();
             this.chartFunctions = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartError = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRight)).BeginInit();
+            this.nudLeft = new System.Windows.Forms.NumericUpDown();
+            this.nudRight = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunctions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRight)).BeginInit();
             this.SuspendLayout();
             // 
             // rbChebyshev
@@ -72,20 +71,6 @@
             this.rbEven.TabStop = true;
             this.rbEven.Text = "Even distribution";
             this.rbEven.UseVisualStyleBackColor = true;
-            // 
-            // nudLeft
-            // 
-            this.nudLeft.Location = new System.Drawing.Point(27, 384);
-            this.nudLeft.Name = "nudLeft";
-            this.nudLeft.Size = new System.Drawing.Size(120, 20);
-            this.nudLeft.TabIndex = 2;
-            // 
-            // nudRight
-            // 
-            this.nudRight.Location = new System.Drawing.Point(166, 384);
-            this.nudRight.Name = "nudRight";
-            this.nudRight.Size = new System.Drawing.Size(120, 20);
-            this.nudRight.TabIndex = 3;
             // 
             // lblLeft
             // 
@@ -111,6 +96,7 @@
             this.nudPower.Name = "nudPower";
             this.nudPower.Size = new System.Drawing.Size(120, 20);
             this.nudPower.TabIndex = 7;
+            this.nudPower.ValueChanged += new System.EventHandler(this.ChangeEvent);
             // 
             // lblPow
             // 
@@ -121,60 +107,123 @@
             this.lblPow.TabIndex = 8;
             this.lblPow.Text = "Power";
             // 
+            // btRun
+            // 
+            this.btRun.Location = new System.Drawing.Point(673, 415);
+            this.btRun.Name = "btRun";
+            this.btRun.Size = new System.Drawing.Size(75, 23);
+            this.btRun.TabIndex = 11;
+            this.btRun.Text = "Run";
+            this.btRun.UseVisualStyleBackColor = true;
+            this.btRun.Click += new System.EventHandler(this.btRun_Click);
+            // 
             // chartFunctions
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartFunctions.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartFunctions.Legends.Add(legend1);
+            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea3.AxisY.Interval = 0.05D;
+            chartArea3.Name = "main";
+            this.chartFunctions.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartFunctions.Legends.Add(legend3);
             this.chartFunctions.Location = new System.Drawing.Point(27, 12);
             this.chartFunctions.Name = "chartFunctions";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartFunctions.Series.Add(series1);
-            this.chartFunctions.Size = new System.Drawing.Size(398, 300);
-            this.chartFunctions.TabIndex = 9;
+            this.chartFunctions.Size = new System.Drawing.Size(398, 332);
+            this.chartFunctions.TabIndex = 12;
             this.chartFunctions.Text = "chart1";
             // 
             // chartError
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartError.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartError.Legends.Add(legend2);
-            this.chartError.Location = new System.Drawing.Point(465, 12);
+            this.chartError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea4.Name = "main";
+            this.chartError.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartError.Legends.Add(legend4);
+            this.chartError.Location = new System.Drawing.Point(461, 12);
             this.chartError.Name = "chartError";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartError.Series.Add(series2);
-            this.chartError.Size = new System.Drawing.Size(323, 300);
-            this.chartError.TabIndex = 10;
-            this.chartError.Text = "chart2";
+            this.chartError.Size = new System.Drawing.Size(287, 332);
+            this.chartError.TabIndex = 13;
+            this.chartError.Text = "chart1";
+            // 
+            // nudLeft
+            // 
+            this.nudLeft.DecimalPlaces = 1;
+            this.nudLeft.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nudLeft.Location = new System.Drawing.Point(27, 384);
+            this.nudLeft.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudLeft.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.nudLeft.Name = "nudLeft";
+            this.nudLeft.Size = new System.Drawing.Size(120, 20);
+            this.nudLeft.TabIndex = 14;
+            this.nudLeft.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nudRight
+            // 
+            this.nudRight.DecimalPlaces = 1;
+            this.nudRight.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nudRight.Location = new System.Drawing.Point(166, 384);
+            this.nudRight.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudRight.Minimum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            -2147483648});
+            this.nudRight.Name = "nudRight";
+            this.nudRight.Size = new System.Drawing.Size(120, 20);
+            this.nudRight.TabIndex = 15;
+            this.nudRight.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(771, 450);
+            this.Controls.Add(this.nudRight);
+            this.Controls.Add(this.nudLeft);
             this.Controls.Add(this.chartError);
             this.Controls.Add(this.chartFunctions);
+            this.Controls.Add(this.btRun);
             this.Controls.Add(this.lblPow);
             this.Controls.Add(this.nudPower);
             this.Controls.Add(this.lblRight);
             this.Controls.Add(this.lblLeft);
-            this.Controls.Add(this.nudRight);
-            this.Controls.Add(this.nudLeft);
             this.Controls.Add(this.rbEven);
             this.Controls.Add(this.rbChebyshev);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunctions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,14 +233,15 @@
 
         private System.Windows.Forms.RadioButton rbChebyshev;
         private System.Windows.Forms.RadioButton rbEven;
-        private System.Windows.Forms.NumericUpDown nudLeft;
-        private System.Windows.Forms.NumericUpDown nudRight;
         private System.Windows.Forms.Label lblLeft;
         private System.Windows.Forms.Label lblRight;
         private System.Windows.Forms.NumericUpDown nudPower;
         private System.Windows.Forms.Label lblPow;
+        private System.Windows.Forms.Button btRun;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFunctions;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartError;
+        private System.Windows.Forms.NumericUpDown nudLeft;
+        private System.Windows.Forms.NumericUpDown nudRight;
     }
 }
 
